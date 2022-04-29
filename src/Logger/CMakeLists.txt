@@ -1,0 +1,5 @@
+set(LIBRARY_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/Logger.cpp")
+set(LIBRARY_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/Logger.hpp")
+
+add_library("Logger" STATIC ${LIBRARY_SOURCES} ${LIBRARY_HEADERS})
+target_include_directories("Logger" PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

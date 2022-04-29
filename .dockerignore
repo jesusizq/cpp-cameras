@@ -1,0 +1,17 @@
+Dockerfile
+.dockerignore
+docker
+
+.git
+.gitignore
+
+build
+dist
+
+.vscode
+.cache
+
+images
+videos
+readme
+makefile
