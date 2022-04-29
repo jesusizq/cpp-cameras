@@ -1,0 +1,25 @@
+services:
+  rtsp_server:
+    image: bluenviron/mediamtx:1.6.0-ffmpeg
+    ports:
+      - "8554:8554"
+      - "1935:1935"
+      - "8888:8888"
+      - "8889:8889"
+    volumes:
+      - ./stream-server/stream-server-configuration.yaml:/mediamtx.yml
+      - ../videos:/videos
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    user: "${UID}:${GID}"
+    restart: unless-stopped
+
+  motion_detection_app:
+    image: susejic/motion_detection_app
+    ports:
+      - "5004:5004"
+    volumes:
+      - ../videos:/videos
+    command: "./build/app/MotionDetection rtsp://rtsp_server:8554/rail_1_cam_1 127.0.0.1 5004 ${MOTION_DETECTION_TIMEOUT} /videos/recording.avi"
+    depends_on:
+      - rtsp_server
