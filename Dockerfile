@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     cmake \
     wget \
     unzip \
+    libopencv-dev \
     libgstreamer1.0-dev \
     libgstreamer-plugins-base1.0-dev \
     libgstreamer-plugins-bad1.0-dev \
@@ -25,15 +26,7 @@ RUN apt-get update && apt-get install -y \
     gstreamer1.0-qt5 \
     gstreamer1.0-pulseaudio \
     && rm -rf /var/lib/apt/lists/*
-
-# Download and install OpenCV
-RUN wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip && \
-    mkdir opencv && unzip opencv.zip -d opencv && \
-    mkdir -p /opencv/build && cd /opencv/build && \
-    cmake -DCMAKE_BUILD_TYPE=Release ../opencv-4.x && \
-    cmake --build . -j$(nproc) && ldconfig && \
-    cd / && rm -rf opencv.zip
-
+    
 # Set the working directory
 WORKDIR /usr/src/app
 

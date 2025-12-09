@@ -1,4 +1,4 @@
-# Motion Detection & Video Recording System
+# RTSP Motion Detector
 
 ![C++](https://img.shields.io/badge/C++-17-blue.svg)
 ![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED.svg)
@@ -6,7 +6,7 @@
 ![GStreamer](https://img.shields.io/badge/GStreamer-Multimedia-orange.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-A high-performance **C++ video processing application** designed to monitor RTSP camera streams, detect motion events, and efficiently record or stream video clips. This project demonstrates a robust implementation of **real-time computer vision pipelines**, **multithreading**, and **containerized deployment**.
+A high-performance **C++ RTSP Motion Detector** designed to monitor RTSP camera streams, detect motion events, and efficiently record or stream video clips. This project demonstrates a robust implementation of **real-time computer vision pipelines**, **multithreading**, and **containerized deployment**.
 
 ## 🚀 Quick Start
 
